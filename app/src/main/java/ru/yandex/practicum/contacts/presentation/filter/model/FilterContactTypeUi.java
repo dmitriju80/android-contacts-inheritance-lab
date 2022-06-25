@@ -5,7 +5,8 @@ import androidx.annotation.NonNull;
 public class FilterContactTypeUi {
 
     private final String type;
-    private final boolean isSelected;
+    //private final boolean isSelected;
+    public boolean isSelected;
 
     public FilterContactTypeUi(@NonNull String type, boolean isSelected) {
         this.type = type;
