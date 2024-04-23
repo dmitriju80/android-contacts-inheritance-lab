@@ -20,4 +20,6 @@ public abstract class ContactsOrderTypeUi {
     }
 
     public abstract String createLogMessage() ;
+
+
 }
