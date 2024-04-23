@@ -2,26 +2,21 @@ package ru.yandex.practicum.contacts.presentation.sort;
 
 import androidx.annotation.NonNull;
 
-public class SortTypeUI {
+import ru.yandex.practicum.contacts.presentation.base.ContactsOrderTypeUi;
 
-    private final String type;
-    private final boolean isSelected;
+public class SortTypeUI extends ContactsOrderTypeUi {
 
-    public SortTypeUI(@NonNull String type, boolean isSelected) {
-        this.type = type;
-        this.isSelected = isSelected;
+
+
+    //@Override
+    public SortTypeUI (@NonNull String type, boolean isSelected) {
+        super(type, isSelected);
     }
 
-    public String getType() {
-        return type;
-    }
 
-    public boolean isSelected() {
-        return isSelected;
-    }
-
+    @Override
     public String createLogMessage() {
-        return "Выбран тип сортировки: " + type;
+        return "Выбран тип сортировки: " + super.getType();
     }
 
     @Override
@@ -35,16 +30,16 @@ public class SortTypeUI {
 
         SortTypeUI that = (SortTypeUI) o;
 
-        if (isSelected != that.isSelected) {
+        if (super.isSelected() != that.isSelected()) {
             return false;
         }
-        return type.equals(that.type);
+        return super.getType().equals(that.getType());
     }
 
     @Override
     public int hashCode() {
-        int result = type.hashCode();
-        result = 31 * result + (isSelected ? 1 : 0);
+        int result = super.getType().hashCode();
+        result = 31 * result + (super.isSelected() ? 1 : 0);
         return result;
     }
 }
