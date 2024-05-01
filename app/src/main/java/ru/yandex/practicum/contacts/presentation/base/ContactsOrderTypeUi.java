@@ -3,8 +3,8 @@ package ru.yandex.practicum.contacts.presentation.base;
 import androidx.annotation.NonNull;
 
 public abstract class ContactsOrderTypeUi {
-    private final String type;
-    private final boolean isSelected;
+    protected final String type;
+    protected final boolean isSelected;
 
     public ContactsOrderTypeUi(@NonNull String type, boolean isSelected) {
         this.type = type;
