@@ -1,6 +1,6 @@
 package ru.yandex.practicum.contacts.model.bank;
 
-public class BankAccount {
+public abstract class BankAccount {
     protected int amount;           //количество
     protected String currency;      //валюта
 
