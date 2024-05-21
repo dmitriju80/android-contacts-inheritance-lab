@@ -39,7 +39,7 @@ System.out.println("Неверно указан тип создаваемого 
                     "Вы можете получить остаток по вашему счёту в размере "+ Accaunt.amount
             + ' ' + Accaunt.currency);}
         }
-        if (Accaunt.currency.equals("credit_account")){
+        else if (Accaunt.currency.equals("credit_account")){
             if (Accaunt.amount==0){
                 System.out.println("Ваш кредитный счёт закрыт");
             }
@@ -55,6 +55,9 @@ System.out.println("Неверно указан тип создаваемого 
                         +Math.abs(Accaunt.amount)+ ' ' + Accaunt.currency);
             }
 
+        }
+        else {
+            System.out.println("Пока что мы не можем закрыть данный вид счёта");
         }
     }
 
