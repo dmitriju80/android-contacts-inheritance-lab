@@ -28,5 +28,34 @@ System.out.println("Неверно указан тип создаваемого 
 
        }
     }
+    // создать метод closeAccount, который принимает на вход переменную типа BankAccount
+    public void closeAccount (BankAccount Accaunt){
+// если переданный аккаунт дебетовый
+        if (Accaunt.currency.equals("debit_account")){
+            if (Accaunt.amount==0){
+                System.out.println("Ваш дебетовый счёт закрыт");
+            }
+            else {System.out.println("Ваш дебетовый счёт закрыт. " +
+                    "Вы можете получить остаток по вашему счёту в размере "+ Accaunt.amount
+            + ' ' + Accaunt.currency);}
+        }
+        if (Accaunt.currency.equals("credit_account")){
+            if (Accaunt.amount==0){
+                System.out.println("Ваш кредитный счёт закрыт");
+            }
+            if (Accaunt.amount>0){
+                System.out.println("Ваш кредитный счёт закрыт." +
+                        " Вы можете получить остаток по вашему счёту в размере "
+                +Accaunt.amount+ ' ' + Accaunt.currency+
+                        " в отделении банка");
+            }
+            if (Accaunt.amount<0){
+                System.out.println("Вы не можете закрыть кредитный счёт, потому как на нём ещё" +
+                        " есть задолженность. Ваша задолженность по счёту составляет  "
+                        +Math.abs(Accaunt.amount)+ ' ' + Accaunt.currency);
+            }
+
+        }
+    }
 
 }
